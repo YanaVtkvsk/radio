@@ -138,6 +138,34 @@ public class RadioTest {
     }
 
     @Test
+    public void SwitchStationsTest5() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStation(1);
+
+        radio.previous();
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void SwitchStationsTest6() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStation(0);
+
+        radio.previous();
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void VolumeBoardersTest() {
         Radio radio = new Radio();
 
@@ -265,5 +293,20 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void DecreaseVolumeTest3() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(10);
+
+        radio.decreaseVolume();
+
+        int expected = 9;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
+
 
