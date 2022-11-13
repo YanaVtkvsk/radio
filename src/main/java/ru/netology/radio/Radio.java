@@ -28,6 +28,14 @@ public class Radio {
         }
     }
 
+    public void previous() {
+        if (currentStation > 0) {
+            currentStation--;
+        } else {
+            currentStation = 9;
+        }
+    }
+
     public int getCurrentStation() {
         return currentStation;
     }
